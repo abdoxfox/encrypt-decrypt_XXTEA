@@ -4,7 +4,7 @@ used in most android vpn,tunneling apks
 
 # requirement :
 
-no libraries or module needs it use the builtin modules .
+pip install requests
 
 delta and secret key.
 
