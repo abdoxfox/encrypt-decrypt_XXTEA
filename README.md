@@ -1,4 +1,5 @@
-encryption and decryption of xxtea enceyption using custom DELTA 
+decryption of xxtea enceyption using custom DELTA.
+used in most android vpn,tunneling apks
 
 # requirement :
 
