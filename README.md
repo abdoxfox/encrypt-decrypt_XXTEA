@@ -1,6 +1,6 @@
 encryption and decryption of xxtea enceyption using custom DELTA 
 
-#requirement :
+# requirement :
 
 no libraries or module needs it use the builtin modules 
 delta and secret key
