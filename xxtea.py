@@ -63,21 +63,33 @@ def  decrypt (str, key):
         sum = (sum-_DELTA) &  0xffffffff
     return  _long2str (v,  True )  
 if  __name__ ==  "__main__" :
-    url = input('Enter raw data url : ')
-    try:
-        req=requests.get(url).text
-    except:
-        sys.exit('ERROR: Not valid url!')
-    enc= req.strip('\n').encode()              
-    key_=str(input('Enter Key : '))
-    key_ = key_.encode()
-    _DELTA =  int(input('enter DELTA : '))
-    res=decrypt ( enc ,  key_ )
-    try: 
-	    res=res.decode('ascii','ignore')
-	    file=open('decptedData.txt','w')
-	    save=file.write(str(res))
-	    file.close()
-	    print (decrypt ( enc ,  key_ ).decode('ascii','ignore'))
-    except:
-    	print('some entred data incorrect check again ')
+    def data():
+        global plain,key_,_DELTA
+        url = input('Enter raw data url : ')
+        try:
+            req=requests.get(url).text
+        except:
+            sys.exit('ERROR: Not valid url!')
+        plain = req.strip('\n').encode() 
+
+        key_ = str(input('Enter Key : '))
+        key_ = key_.encode()
+        _DELTA =  int(input('enter DELTA : '))
+    argv = str(sys.argv[1])
+    if argv ==' encrypt':
+        data()
+        res = encrypt(plain,key_).decode()
+        file = open('encryptedData.txt','w')
+        save = file.write(str(res))
+        file.close()
+        print(res.decode())
+    elif argv == 'decrypt':
+        res=decrypt (enc,key_ )
+        try: 
+            res = res.decode('ascii','ignore')
+            file = open('decryptedData.txt','w')
+            save = file.write(str(res))
+            file.close()
+            print(res)
+        except:
+            print('some entred data incorrect check again ')
