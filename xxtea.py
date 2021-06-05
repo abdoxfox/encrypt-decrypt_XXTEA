@@ -84,6 +84,7 @@ if  __name__ ==  "__main__" :
         file.close()
         print(res.decode())
     elif argv == 'decrypt':
+        data()
         res=decrypt (plain,key_ )
         try: 
             res = res.decode('ascii','ignore')
