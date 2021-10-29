@@ -82,7 +82,7 @@ if  __name__ ==  "__main__" :
         file = open('encryptedData.txt','w')
         save = file.write(str(res))
         file.close()
-        print(res.decode())
+        print(res)
     elif argv == 'decrypt':
         data()
         res=decrypt (plain,key_ )
