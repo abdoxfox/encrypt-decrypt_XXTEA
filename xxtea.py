@@ -76,7 +76,7 @@ if  __name__ ==  "__main__" :
         key_ = key_.encode()
         _DELTA =  int(input('enter DELTA : '))
     argv = str(sys.argv[1])
-    if argv ==' encrypt':
+    if argv =='encrypt':
         data()
         res = encrypt(plain,key_).decode()
         file = open('encryptedData.txt','w')
